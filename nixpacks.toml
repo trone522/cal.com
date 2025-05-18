@@ -1,0 +1,9 @@
+# nixpacks.toml
+[phases.install]
+cmds = ["yarn install --immutable"]
+
+[phases.build]
+cmds = ["yarn turbo run build --filter=apps/web... --filter=apps/api..."]
+
+[start]
+cmd = "node apps/web/.output/server/index.mjs"
